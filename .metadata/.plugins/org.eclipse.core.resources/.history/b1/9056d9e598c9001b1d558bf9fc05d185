@@ -1,0 +1,56 @@
+package pe.upeu.app.catdoc.SOAP.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pe.upeu.app.catdoc.SOAP.entity.Docente;
+import pe.upeu.app.catdoc.SOAP.repository.DocenteRepository;
+import pe.upeu.app.catdoc.SOAP.service.DocenteService;
+
+@Service
+public class DocenteServiceImpl implements DocenteService{
+
+		
+	@Autowired
+	private DocenteRepository repo;
+	
+	/*CRUDS*/
+	
+	
+	@Override
+	public List<Docente> lista() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+	@Override
+	public Optional<Docente> buscarById(Integer id) {
+		// TODO Auto-generated method stub
+		return repo.findById(id);
+	}
+
+	@Override
+	public Docente registrar(Docente object) {
+		// TODO Auto-generated method stub
+		return repo.save(object);
+	}
+
+	@Override
+	public Docente actualizar(Docente object) {
+		// TODO Auto-generated method stub
+		return repo.save(object);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		// TODO Auto-generated method stub
+		repo.deleteById(id);
+		
+	}
+
+}

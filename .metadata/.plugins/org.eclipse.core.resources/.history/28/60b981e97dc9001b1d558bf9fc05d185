@@ -1,0 +1,7 @@
+package pe.upeu.app.catdoc.SOAP.impl;
+
+import pe.upeu.app.catdoc.SOAP.service.DocenteService;
+
+public class PersonaServiceImpl implements DocenteService {
+
+}

@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.CATEGORIZACION.models.entity;
+
+public class Categorizacion {
+
+}

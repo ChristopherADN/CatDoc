@@ -1,0 +1,3 @@
+spring.application.name=servicio-docente
+server.port=8001
+

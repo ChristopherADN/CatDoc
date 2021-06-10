@@ -1,0 +1,13 @@
+#Server
+server.port=9091
+
+#ConexionBD
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+sprnig.datasource.url=jdbc:mysql://localhost:3306/BD
+spring.datasource.username=root
+spring.datasource.password=admin
+
+#JPA
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect

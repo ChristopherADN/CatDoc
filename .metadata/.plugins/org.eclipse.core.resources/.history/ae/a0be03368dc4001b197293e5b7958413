@@ -1,0 +1,10 @@
+package pe.upeu.app.catdoc.CATEGORIZACION.models.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "CATEGORIZACION")
+public class Categorizacion {
+
+}

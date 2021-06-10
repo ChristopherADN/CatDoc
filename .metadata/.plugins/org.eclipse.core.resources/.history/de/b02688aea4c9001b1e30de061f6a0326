@@ -1,0 +1,39 @@
+package pe.upeu.app.catdoc.SOAP.endpoint;
+
+import java.util.Optional;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import pe.upeu.app.catdoc.SOAP.entity.Docente;
+import pe.upeu.app.catdoc.SOAP.service.DocenteService;
+import pe.upeu.ws.services.docente.DocenteType;
+import pe.upeu.ws.services.docente.GetDocenteByIdRequest;
+import pe.upeu.ws.services.docente.GetDocenteByIdResponse;
+import pe.upeu.ws.services.docente.ObjectFactory;
+
+@Endpoint
+public class DocenteEndpoint {
+
+	private static final String NAMESPACE_URI="http://ws.upeu.pe/types/docente";
+	@Autowired
+	private DocenteService service;
+	
+	@ResponsePayload
+	@PayloadRoot(namespace=NAMESPACE_URI, localPart = "getDocenteByRequest")
+	public GetDocenteByIdResponse buscarById(@RequestPayload GetDocenteByIdRequest request) {
+		ObjectFactory objectFactory = new ObjectFactory();
+		GetDocenteByIdResponse response = objectFactory.createGetDocenteByIdResponse();
+		Optional<Docente> docente= service.buscarById(request.getId());
+		if(docente.isEmpty())
+			return null;
+		DocenteType docenteType= new DocenteType();
+		BeanUtils.copyProperties(docente.get(), docenteType);
+		response.setDocenteType(docenteType);
+		return response;
+	}
+}

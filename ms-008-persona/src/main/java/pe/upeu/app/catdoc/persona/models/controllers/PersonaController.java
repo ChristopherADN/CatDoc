@@ -1,0 +1,31 @@
+package pe.upeu.app.catdoc.persona.models.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import pe.upeu.app.catdoc.persona.models.Persona;
+import pe.upeu.app.catdoc.persona.models.service.PersonaService;
+
+@RestController
+public class PersonaController {
+
+	@Autowired
+	@Qualifier("serviceFeign")
+	private PersonaService personaService;
+
+	@GetMapping("/listar")
+	public List<Persona> listar(){
+		return personaService.findAll();
+	}
+
+	@GetMapping("/ver/{id}")
+	public Persona correo(@PathVariable Integer id) {
+		return personaService.findById(id);
+	}
+	
+}

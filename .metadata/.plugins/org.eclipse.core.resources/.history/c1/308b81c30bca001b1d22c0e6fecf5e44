@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.persona.models.controllers;
+
+public class PersonaController {
+
+}

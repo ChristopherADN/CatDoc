@@ -1,0 +1,15 @@
+package pe.upeu.app.catdoc.persona;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+@EnableFeignClients
+@SpringBootApplication
+public class Ms008PersonaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ms008PersonaApplication.class, args);
+	}
+
+}

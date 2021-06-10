@@ -1,0 +1,9 @@
+package pe.upeu.app.catdoc.persona.models.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PersonaController {
+
+	private PersonaService
+}

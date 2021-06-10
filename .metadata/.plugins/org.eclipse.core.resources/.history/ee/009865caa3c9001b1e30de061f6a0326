@@ -1,0 +1,14 @@
+package pe.upeu.app.catdoc.SOAP.endpoint;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+
+import pe.upeu.app.catdoc.SOAP.service.DocenteService;
+
+@Endpoint
+public class DocenteEndpoint {
+
+	private static final String NAMESPACE_URI="http://ws.upeu.pe/types/docente";
+	@Autowired
+	private DocenteService service;
+}

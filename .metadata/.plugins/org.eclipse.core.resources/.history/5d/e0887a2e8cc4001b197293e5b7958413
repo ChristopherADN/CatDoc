@@ -1,0 +1,10 @@
+package pe.upeu.app.catdoc.ROL.models.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "ROL")
+public class Rol {
+
+}

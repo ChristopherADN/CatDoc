@@ -1,0 +1,32 @@
+package pe.upeu.app.catdoc.persona.models.service;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.sun.tools.javac.code.Attribute.Array;
+
+import pe.upeu.app.catdoc.persona.models.Docente;
+import pe.upeu.app.catdoc.persona.models.Persona;
+
+@Service
+public class PersonaServiceImpl implements PersonaService {
+
+	@Autowired
+	private RestTemplate clienteRest;
+	@Override
+	public List<Persona> findAll() {
+	List<Docente> docente= Arrays.asList(clienteRest.getForObject("http://localhost:8001/listar", Docente[].class));
+		return docente.stream().map(p -> new persona(p, 1)).collect(Collectors.toList());
+	}
+
+	@Override
+	public Persona findById(Integer id) {
+
+		return null;
+	}
+
+}

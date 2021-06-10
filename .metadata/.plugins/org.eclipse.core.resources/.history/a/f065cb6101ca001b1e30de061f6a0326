@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.persona.models;
+
+public class Docente {
+
+}

@@ -1,0 +1,6 @@
+package pe.upeu.app.catdoc.DOCENTE.models.service;
+
+public interface IDocenteService {
+
+	public List<Docente> findAll();
+}

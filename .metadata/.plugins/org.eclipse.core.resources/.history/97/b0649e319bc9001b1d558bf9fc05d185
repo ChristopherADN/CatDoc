@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.SOAP.endpoint;
+
+public class DocenteEndpoint {
+
+}

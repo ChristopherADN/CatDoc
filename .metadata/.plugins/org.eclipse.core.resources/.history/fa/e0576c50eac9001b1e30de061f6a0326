@@ -1,0 +1,4 @@
+spring.application.name=servicio-docente
+server.port=8001
+
+eureka.cliente.service-url.defaultZone=http://localhost:8761/eureka

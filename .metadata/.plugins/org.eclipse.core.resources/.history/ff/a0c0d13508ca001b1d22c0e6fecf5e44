@@ -1,0 +1,9 @@
+package pe.upeu.app.catdoc.persona.models;
+
+import java.util.List;
+
+public interface PersonaService {
+
+	public List<Persona> findAll();
+	public Persona findById(Integer id);
+}

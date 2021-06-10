@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://ws.upeu.pe/services/docente/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="docente"
+	xmlns:type="http://ws.upeu.pe/types/docente"
+	targetNamespace="http://ws.upeu.pe/services/docente/">
+	
+	<wsdl:types>
+		<xsd:schema	targetNamespace="http://ws.upeu.pe/services/docente/">
+		<!-- metodo solicitud docente -->
+			<xsd:element name="getDocenteByIdRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="id" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+				<!-- metodo de respuesta docente -->
+			<xsd:element name="getDocenteByIdResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="docenteType" type="tns:DocenteType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<!-- metodo de metodo de solicitud registrar docente -->
+			<xsd:element name="createDocenteRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="docenteType" type="tns:DocenteType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<!-- metodo de respuesta registrar docente -->
+			<xsd:element name="updateDocenteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="docenteType" type="tns:DocenteType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+				<!-- metodo solicitud actualizar docente -->
+			<xsd:element name="createDocenteRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="docenteType" type="tns:DocenteType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<!-- metodo de respuesta actualizar docente -->
+			<xsd:element name="updateDocenteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="docenteType" type="tns:DocenteType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- Detalle del docente -->
+			<xsd:complexType name="DocenteType">
+				<xsd:sequence>
+				<xsd:element name="id" type="xsd:int"></xsd:element>
+				<xsd:element name="nombre" type="xsd:string"></xsd:element>
+				<xsd:element name="apPaterno" type="xsd:string"></xsd:element>
+				<xsd:element name="apMaterno" type="xsd:string"></xsd:element>
+				<xsd:element name="dni" type="xsd:string"></xsd:element>
+				<xsd:element name="correo" type="xsd:string"></xsd:element>
+				<xsd:element name="fechaNacimiento" type="xsd:date"></xsd:element>
+				<xsd:element name="sexo" type="xsd:string"></xsd:element>		
+				<xsd:element name="usuario" type="xsd:string"></xsd:element>		
+				<xsd:element name="clave" type="xsd:string"></xsd:element>		
+				<xsd:element name="campus" type="xsd:string"></xsd:element>		
+				<xsd:element name="estado" type="xsd:int"></xsd:element>		
+				<xsd:element name="catIdcat" type="xsd:int"></xsd:element>		
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>	
+	
+	<wsdl:message name="getDocenteByIdResponse">
+		<wsdl:part element="tns:getDocenteByIdRequest" name="inputData" />
+	</wsdl:message>
+	<wsdl:message name="getDocenteByIdResponse">
+		<wsdl:part element="tns:getDocenteByIdResponse"	name="outputData" />
+	</wsdl:message>
+	
+	<wsdl:message name="createDocenteRequest">
+		<wsdl:part element="tns:createDocenteRequest" name="inputData" />
+	</wsdl:message>
+	<wsdl:message name="createDocenteResponse">
+		<wsdl:part element="tns:createDocenteResponse"	name="outputData" />
+	</wsdl:message>
+	
+	<wsdl:message name="updateDocenteRequest">
+		<wsdl:part element="tns:updateDocenteRequest" name="inputData" />
+	</wsdl:message>
+	<wsdl:message name="updateDocenteResponse">
+		<wsdl:part element="tns:updateDocenteResponse"	name="outputData" />
+	</wsdl:message>
+	
+	<wsdl:portType name="docentePortType">
+		<wsdl:operation name="buscarById">
+			<wsdl:input message="tns:getDocenteByIdRequest" />
+			<wsdl:output message="tns:getDocenteByIdResponse" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="registrar">
+			<wsdl:input message="tns:createDocenteRequest" />
+			<wsdl:output message="tns:createDocenteResponse" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="actualizar">
+			<wsdl:input message="tns:actualizarDocenteRequest" />
+			<wsdl:output message="tns:actualizarDocenteResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="docenteSOAP" type="tns:docentePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="buscarById">
+			<soap:operation	soapAction="http://ws.upeu.pe/services/docente/buscarById" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="registrar">
+			<soap:operation	soapAction="http://ws.upeu.pe/services/docente/registrar" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="docenteService">
+		<wsdl:documentation>Docente Service</wsdl:documentation>
+		<wsdl:port binding="tns:docenteSOAP" name="docenteSOAP">
+			<soap:address location="http://localhost:9091/upeu/ws/docenteDemo" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

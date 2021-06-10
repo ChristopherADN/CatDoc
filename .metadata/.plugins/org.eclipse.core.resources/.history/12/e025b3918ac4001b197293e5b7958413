@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.COMISIONDOCORD.models.entity;
+
+public class ComisionDocOrd {
+
+}

@@ -1,0 +1,5 @@
+package pe.upeu.app.catdoc.SOAP.entity;
+
+public class Docente {
+
+}

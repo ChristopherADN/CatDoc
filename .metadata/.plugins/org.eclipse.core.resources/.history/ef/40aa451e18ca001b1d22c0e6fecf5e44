@@ -1,0 +1,13 @@
+package pe.upeu.app.catdoc.DOCENTE;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Ms001DocenteApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ms001DocenteApplication.class, args);
+	}
+
+}
