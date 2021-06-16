@@ -23,10 +23,24 @@ public class DocenteServiceImpl implements IDocenteService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly=true)
 	public Docente findById(Integer id) {
 
 		return docenteDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public Docente save(Docente docente) {
+		// TODO Auto-generated method stub
+		return docenteDao.save(docente);
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public void deleteById(Integer id) {
+		// TODO Auto-generated method stub
+		docenteDao.deleteById(id);
 	}
 
 }

@@ -8,4 +8,8 @@ public interface IDocenteService {
 
 	public List<Docente> findAll();
 	public Docente findById(Integer id);
+	
+	public Docente save(Docente docente);
+	
+	public void deleteById(Integer id);
 }
