@@ -1,5 +1,0 @@
-package pe.upeu.app.catdoc.DOCENTE.models.dao;
-
-public interface DocenteDao {
-
-}

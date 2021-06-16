@@ -1,8 +1,0 @@
-package pe.upeu.app.catdoc.GESTIONPREVIA.models.entity;
-
-import javax.persistence.Entity;
-
-@Entity
-public class GestionPrevia {
-
-}
