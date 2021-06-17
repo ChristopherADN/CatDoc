@@ -1,5 +1,7 @@
 package pe.upeu.app.catdoc.persona.models;
 
+import pe.upeu.app.catdoc.commons.models.entity.Docente;
+
 public class Persona {
 
 	private Docente docente;

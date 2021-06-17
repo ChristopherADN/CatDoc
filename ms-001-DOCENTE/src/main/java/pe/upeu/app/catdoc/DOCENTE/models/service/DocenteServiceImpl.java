@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.upeu.app.catdoc.DOCENTE.models.dao.DocenteDao;
-import pe.upeu.app.catdoc.DOCENTE.models.entity.Docente;
+import pe.upeu.app.catdoc.commons.models.entity.Docente;
 
 @Service
 public class DocenteServiceImpl implements IDocenteService{

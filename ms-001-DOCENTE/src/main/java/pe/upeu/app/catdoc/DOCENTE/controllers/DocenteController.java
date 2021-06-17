@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.upeu.app.catdoc.DOCENTE.models.entity.Docente;
+import pe.upeu.app.catdoc.commons.models.entity.Docente;
 import pe.upeu.app.catdoc.DOCENTE.models.service.IDocenteService;
 
 @RestController

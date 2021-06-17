@@ -2,7 +2,7 @@ package pe.upeu.app.catdoc.DOCENTE.models.service;
 
 import java.util.List;
 
-import pe.upeu.app.catdoc.DOCENTE.models.entity.Docente;
+import pe.upeu.app.catdoc.commons.models.entity.Docente;
 
 public interface IDocenteService {
 

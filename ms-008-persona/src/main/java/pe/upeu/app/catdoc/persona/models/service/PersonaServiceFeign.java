@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import pe.upeu.app.catdoc.persona.clientes.DocenteClienteRest;
+import pe.upeu.app.catdoc.commons.models.entity.Docente;
 import pe.upeu.app.catdoc.persona.models.Persona;
 
 @Service("serviceFeign")
@@ -20,14 +21,30 @@ public class PersonaServiceFeign implements PersonaService {
 	
 	@Override
 	public List<Persona> findAll() {
-		// TODO Auto-generated method stub
+
 		return clienteFeign.listar().stream().map(p -> new Persona(p)).collect(Collectors.toList());
 	}
 
 	@Override
 	public Persona findById(Integer id) {
-		// TODO Auto-generated method stub
 		return new Persona(clienteFeign.detalle(id));
+	}
+
+	@Override
+	public Docente save(Docente docente) {
+		return clienteFeign.crear(docente);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		Long idLong = Long.valueOf(id.longValue());
+clienteFeign.eliminar(idLong);
+		
+	}
+
+	@Override
+	public Docente update(Docente docente, Integer id) {
+		return clienteFeign.update(docente, id);
 	}
 
 }
